@@ -3,6 +3,8 @@
 # Build output
 node_modules/
 dist/
+src/gallery/index.html
+photos.json
 
 # Environment variables
 .env

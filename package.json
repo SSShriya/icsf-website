@@ -5,14 +5,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "tsx src/build.ts && vite",
+    "build": "tsx src/build.ts && vite build",
     "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^26.2.0",
     "esbuild": "^0.28.2",
     "glob": "^13.0.6",
     "tsx": "^4.23.12",
