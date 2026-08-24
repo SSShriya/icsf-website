@@ -1,0 +1,29 @@
+# Dependencies
+
+# Build output
+node_modules/
+dist/
+
+# Environment variables
+.env
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+
+# Typescript
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
