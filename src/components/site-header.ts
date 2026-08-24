@@ -1,7 +1,16 @@
 class SiteHeader extends HTMLElement {
-  connectedCallback() {
-    const subtitle = this.getAttribute('subtitle') ?? '';
+  static observedAttributes = ['subtitle'];
 
+  connectedCallback() {
+    this.render();
+  }
+
+  attributeChangedCallback() {
+    this.render();
+  }
+
+  render() {
+    const subtitle = this.getAttribute('subtitle') ?? '';
     this.innerHTML = `
             <h1>
                 <a id="logo" href="/">

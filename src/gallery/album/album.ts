@@ -14,6 +14,12 @@ async function loadAlbum(): Promise<void> {
     return;
   }
 
+  // set page title and site header
+  const title = prettifyName(albumName);
+  document.title = `${title} - ICSF`;
+  const header = document.querySelector('site-header');
+  header?.setAttribute('subtitle', title);
+
   try {
     const response = await fetch(`${ALBUM_PATH}/photos.json`);
     if (!response.ok) throw new Error(`HTTP: ${response.status}`);
