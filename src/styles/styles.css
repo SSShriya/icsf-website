@@ -1,0 +1,304 @@
+ /*
+ * Based off work by Benedict Harcourt <ben.harcourt@harcourtprogramming.co.uk>
+ *
+ * This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
+ * Unported License. To view a copy of this license, visit
+ *   http://creativecommons.org/licenses/by-sa/3.0/
+ * or send a letter to
+ *   Creative Commons,
+ *   444 Castro Street,
+ *   Suite 900,
+ *   Mountain View,
+ *   California,
+ *   94041, USA.
+ */
+
+/*****************************************************
+ * General Element Definitions
+ *****************************************************/
+html
+{
+	background: #000;
+	background-image: url(/background.jpg);
+	background-repeat: repeat;
+	background-attachment: fixed;
+	height: 100%;
+
+	font-family: Calibri, 'Open Sans', Helvetica, sans-serif;
+	font-size: 14pt;
+	overflow-y: scroll;
+}
+
+body
+{
+	background: rgba(255,255,255,0.8);
+
+	min-width: 20em;
+	max-width: 80em;
+	margin: 0;
+
+	padding: 0 1em 0.5em 11em;
+}
+
+body.no-nav
+{
+	padding-left: 1em;
+}
+
+@media screen and (min-width: 45em)
+{
+	html
+	{
+		padding: 2em 3em 0;
+	}
+	body
+	{
+		margin: 0 auto;
+		border-radius: 4px;
+	}
+}
+
+p
+{
+	margin: 0;
+	padding: 0;
+	margin-bottom: 6pt;
+	line-height: 1.15em;
+	text-align: justify;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+	font-family: 'Alice', serif;
+	font-weight: normal;
+}
+
+h1
+{
+	font-family: 'Lora', serif;
+	font-size: 3em;
+	text-align: center;
+
+	line-height: 1.2em;
+
+	padding: 0.25em 0;
+	border-bottom: 1px solid #aaa;
+	margin-top: 0;
+}
+
+#subtitle
+{
+	font-size: 0.50em;
+	line-height: normal;
+	display: block;
+}
+
+h2, h3
+{
+	margin: 0.8em 0 0.5em 0;
+}
+
+h2
+{
+	font-size: 1.64em;
+}
+
+h3
+{
+	font-size: 1.28em;
+}
+
+a>img, img>a
+{
+	border: none;
+}
+
+nav
+{
+	float: left;
+	margin-left: -11em;
+
+	width: 10em;
+	height: 100%;
+
+	padding: 0.3em 0;
+
+	border-right-color: rgba(0,0,128,0.5);
+	border-right-width: 2px;
+	border-right-style: solid;
+}
+
+nav>h3
+{
+	text-align: right;
+	margin: 0.5em 0 0.2em 0;
+	padding: 1px 1em;
+}
+
+nav>a
+{
+	display: block;
+	text-align: right;
+
+	min-height: 1.4em;
+	margin: 10px;
+	padding: 15px 1em;
+	text-decoration: none;
+
+	background-color: rgba(0,0,128,0.3);
+	color: black;
+	font-size:15pt;
+}
+
+nav>a:hover
+{
+	background-color: rgba(0,0,128,0.2);
+	color: darkblue;
+}
+
+nav>hr
+{
+	border: none;
+	border-bottom: 1px solid rgba(0,0,128,0.5);
+	width: 8em;
+	margin-right: 0;
+}
+
+footer
+{
+	clear: both;
+	text-align: center;
+	border-top: 1px solid #aaa;
+	padding-top: 1em;
+	margin-top: 2em;
+	font-size: 0.8em;
+}
+
+/*****************************************************
+ * General Classes
+ *****************************************************/
+
+.center { text-align: center; }
+.thumb  {
+	width: 120px;
+	min-height: 160px;
+	vertical-align: top;
+	display: inline-block;
+	padding: 10px;
+	margin: 5px;
+	border: 1px #eee solid;
+}
+.thumb img { 
+	display: block; 
+	margin: 0 10px 5px;
+	width: 100px;
+	height: 100px;
+	object-fit: cover; 
+}
+.thumb span {
+	display: block;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	text-align: center;
+	font-size: 0.85em;
+}
+
+.copyright:before
+{
+	content: '© 2010-26 ';
+}
+
+.hang-right
+{
+	float: right;
+	margin: 0.2em 0.2em 0.5em 1em;
+}
+
+.hang-left
+{
+	float: left;
+	margin: 0.2em 1em 0.5em 0.2em;
+}
+
+.left  { float: left;  }
+.right { float: right; }
+.clear { clear: both;  }
+
+.no-break
+{
+	break-inside: avoid;
+}
+
+.columns
+{
+	column-width: 30em;
+    column-gap: 2em;
+    column-rule: 1px solid rgba(0,0,0,0.1);
+    column-fill: balance;
+}
+
+td
+{
+	padding: 0 1em;
+}
+
+#logo
+{
+	padding: 8px;
+	width: 93px;
+	height: 60px;
+	background-color: rgb(64,64,216);
+	box-shadow: inset 0 0 10px black;
+	border-radius: 5px;
+	float: left;
+	margin-left: -3.4em;
+}
+
+/*****************************************************
+ * Social Media
+ *****************************************************/
+
+.instagram-media{
+	margin: 0 auto !important;
+}
+
+#discord-widget {
+	float: right;
+	background-color: #8f8fb6;
+	padding: 5px;
+	margin: 5px;
+	color: white;
+}
+
+#discord-logo {
+	float: left;
+	margin: 4px;
+	height: 45px;
+	margin-right: 8px;
+}
+
+#discord-indicator {
+	display: inline-block;
+	background-color: #67e64c;
+	width: 8px;
+	height: 8px;
+	vertical-align: middle;
+	border-radius: 100%;
+	margin-right: 5px;
+}
+
+#discord-widget span {
+	font-size: 9pt;
+	color: #e0e0e0;
+}
+
+#discord-join {
+	float: right;
+	background-color: #6ccf63;
+	margin: 4px;
+	margin-left: 8px;
+	padding: 9px 17px;
+	border-radius: 3px;
+	color: white;
+	text-decoration: none;
+}
