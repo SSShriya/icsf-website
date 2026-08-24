@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Picocon 44 - ICSF</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script type="module" src="/components/site-header.ts"></script>
+    <script type="module" src="/components/site-nav.ts"></script>
+    <script type="module" src="/components/site-footer.ts"></script>
+    <style>
+        table { margin: 10px 0; border-collapse: collapse; }
+        td { padding: 4px 8px; vertical-align: top; border: 1px solid #aaa; }
+        td .note { font-size: smaller; font-style: italic; }
+        #buy {
+            font-size: 40pt;
+            text-align: center;
+            font-family: 'Alice', serif;
+        }
+        #buy div {
+            display: inline-block;
+            font-size: 12pt;
+            padding: 8px;
+            background: rgba(64,64,64,0.5);
+            border-radius: 8px;
+            text-align: center;
+            width: 220px;
+            height: 60px;
+            vertical-align: middle;
+            line-height: 28px;
+            margin-bottom: 10px;
+            color: #f1f1f1;
+        }
+        #buy div:hover {
+            color: #fff;
+            background: rgba(32,32,32,0.5);
+        }
+        #buy a { color: inherit; text-decoration: none; }
+        #buy a:first-child { font-size: 1.5em; }
+        #buy hr { margin: 3px 0; border-color: #aaa; }
+    </style>
+</head>
+
+<body>
+    <site-header subtitle="Picocon 44 - Coming Soon!"></site-header>
+
+    <!-- TODO: add links to tickets once confirmed -->
+    <site-nav extra-links='[
+        {"href": "#goh", "label": "Guests"},
+        {"href": "#timetable", "label": "Timetable"},
+        {"href": "#tickets", "label": "Tickets"},
+        {"href": "#contact", "label": "Contact Us"}
+    ]'></site-nav>
+
+    <main>
+        <!--TODO: update date and time and location here when confirmed-->
+        <p style="font-variant: small-caps; font-size: 16pt; text-align: center;">
+            <span itemprop="alternateName">Picocon 44</span>
+            will be held on...
+        </p>
+
+        <h2>What is Picocon?</h2>
+        <div itemprop="description">
+            <p>
+                Picocon is the annual Science Fiction &amp; Fantasy convention
+                run by the Imperial College Science Fiction and Fantasy Society, ICSF.
+                We try not to clash with other conventions around the same time.
+            </p>
+            <p>For those who have not been to a Picocon before we will have:</p>
+            <ul>
+                <li>Talks from various authors.</li>
+                <li>A scavenger hunt throughout the day</li>
+                <li>A sci-fi and fantasy themed quiz</li>
+                <li>A panel discussion by the authors.</li>
+                <li>Tabletop society will also be running loads of games
+                    for the duration of the day.</li>
+            </ul>
+        </div>
+
+        <hr style="width:50%; border: 1px solid; border-radius: 1px;" />
+
+         <h2 id="goh">Guests of Honour</h2>
+         <!--TODO: fill this in once confirmed template commented out below:-->
+         <!--<p>Speaking at Picocon 44 will be:</p>-->
+         <h3>Coming Soon</h3>
+         <!--<h3>Bryony Pearce</h3>
+         <h4><a href="http://www.bryonypearce.co.uk/" target="_blank">bryonypearce.co.uk</a></h4>
+         <p>Bryony Pearce is a multi-award-winning novelist working in both the YA and Adult
+             markets. She writes science fiction short stories, adult thrillers and a mixture
+             of young adult dystopia, horror and thrillers. She teaches the course writing for
+             children at City University and has performed at the Edinburgh Literary Festival,
+             The Wychwood Festival, Comicon, YALC, the Sci Fi Weekender, The Just So Festival
+             and a number of other festivals and events.</p>-->  
+
+        <!--TODO: fill this in once confirmed. template commented out below:-->
+        <div class="no-break">
+             <h2 id="timetable">Timetable</h2>
+             <h3>Coming Soon</h3>
+             <table>
+                 <tbody>
+                     <!--<tr><td>10:00</td><td>Guest Talk 1<br /><i>Bryony Pearce</i></td></tr>
+                     <tr><td>11:00</td><td>Guest Talk 2<br /><i>Matthew Wraith</i></td></tr>
+                     <tr><td>11:50</td><td>Guest Talk 3<br /><i>Louise Mumford</i></td></tr>
+                     <tr><td>12:40</td><td>Guest Talk 4<br /><i>Gareth Powell</i></td></tr>
+                     <tr><td>13:20 - 15:00</td><td>Lunch, Games, Charity Events</td></tr>
+                     <tr><td>15:00</td><td>Guest Talk 5<br /><i>A.J. Flowers</i></td></tr>
+                     <tr><td>16:00</td><td>Panel</td></tr>
+                     <tr><td>17:00</td><td>Quiz</td></tr>-->
+                 </tbody>
+             </table>
+         </div>
+
+        <!--TODO: update links-->
+        <div class="no-break">
+            <h2 id="tickets">Tickets</h2>
+            <h3>Coming Soon</h3>
+            <!--<p>Tickets for Picocon can be purchased here:</p>
+            <a href="https://www.imperialcollegeunion.org/shop/csp/science-fiction-and-fantasy/picocon-39-members-tickets"
+                target="_blank">For Members</a>
+            <br />
+            <a href="https://www.imperialcollegeunion.org/shop/csp/science-fiction-and-fantasy/picocon-39-tickets-non-members-0"
+                target="_blank">For Non-Members</a>-->
+        </div>
+        <h2 id="contact">Contact Us</h2>
+        <p>
+            For more information, please contact
+            the Picocon Sofa (comfier than a chair), at
+            <a href="mailto:icsf.picoconsofa@gmail.com">icsf.picoconsofa@gmail.com</a>.
+        </p>
+        <p>Our mail address is:</p>
+        <blockquote itemprop="location" itemscope itemtype="http://schema.org/PostalAddress">
+            ICSF<br />
+            Student Activities Centre<br />
+            <span itemprop="name">Imperial College Students' Union</span><br />
+            <span itemprop="streetAddress">Beit Quad<br />Prince Consort Road</span><br />
+            <span itemprop="addressRegion">London</span><br />
+            <span itemprop="postalCode">SW7 2BB</span><br />
+            <span itemprop="addressCountry">UK</span>
+        </blockquote>
+
+    </main>
+
+    <site-footer extra-text="The first Picocon was in 1984. If you're curious, we have a record of <a href='/history/'>Picocons of years gone by</a>.">
+    </site-footer>
+</body>
+</html>
