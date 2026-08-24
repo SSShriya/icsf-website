@@ -6,6 +6,7 @@ export default defineConfig({
   publicDir: '../public',
   build: {
     outDir: '../dist',
+    emptyOutDir: true,
     rollupOptions: {
       // this finds all the html files
       input: glob.sync('**/*.html', {cwd: './src'}),
