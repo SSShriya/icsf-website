@@ -3,14 +3,14 @@ import * as path from 'path';
 
 import {prettifyName, URL_PATH} from './utils.js';
 
-const MEDIA_DIR = './public/gallery';
+const GALLERY_DIR = './public/gallery';
 const TEMPLATE_FILE = './src/gallery/gallery-template.html';
 const OUTPUT_FILE = './src/gallery/index.html';
 
 /* Given an album directory name, and a list of images in the album,
    make a JSON file with all the image paths */
 function buildAlbumJSON(album: string, images: string[]): void {
-  const outputPath = path.join(MEDIA_DIR, album, 'photos.json');
+  const outputPath = path.join(GALLERY_DIR, album, 'photos.json');
   fs.writeFileSync(
       outputPath, JSON.stringify(images, /* replacer */ null, /* spaces */ 2), 'utf-8');
 }
@@ -30,7 +30,7 @@ function buildThumbHTML(href: string, imgSrc: string, label: string): string {
 function buildAlbumHTML(albums: string[]): string {
   return albums
       .map(album => {
-        const albumDir = path.join(MEDIA_DIR, album);
+        const albumDir = path.join(GALLERY_DIR, album);
         // get all the images in this album and sort alphabetically
         const images = fs.readdirSync(albumDir)
                            .filter((f: string) => /\.(jpg|jpeg|png|webp|gif)$/i.test(f))
@@ -57,13 +57,13 @@ function buildAlbumHTML(albums: string[]): string {
 export function buildGallery(): void {
   // scan for albums in media dir
   const albums =
-      fs.readdirSync(MEDIA_DIR, {withFileTypes: true})
+      fs.readdirSync(GALLERY_DIR, {withFileTypes: true})
           .filter(d => d.isDirectory())
           .map(d => d.name)
           .sort((a, b) => {return a.toLocaleLowerCase().localeCompare(b.toLocaleLowerCase())});
 
   if (albums.length === 0) {
-    console.warn(`No albums found in ${MEDIA_DIR}`);
+    console.warn(`No albums found in ${GALLERY_DIR}`);
     return;
   }
 
