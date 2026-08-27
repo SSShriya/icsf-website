@@ -30,7 +30,8 @@ class SiteNav extends HTMLElement {
   }
 
   private link(href: string, label: string, currentPath: string): string {
-    return `<a href="${href}" ${currentPath === href ? 'class="active"' : ''}>${label}</a>`;
+    const base = import.meta.env.BASE_URL;
+    return `<a href="${base}${href}" ${currentPath === href ? 'class="active"' : ''}>${label}</a>`;
   }
 }
 
