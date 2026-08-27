@@ -33,6 +33,17 @@ This script runs firsts, generating the `gallery` page, and the `publications` p
 ### Step 2: Vite
 - Vite then compiles everything in `src/` into `dist/`. This is where the completely built website lives.
 
+## Configuration
+### Deployment URL 
+- The base URL for the site is defined in vite.config.ts in the `base` parameter. It sets two different base URLs
+  depending on whether the project was run with `npm run build` or `npm run dev`. It specifies the base from which
+  all relative URLs are calculated. For asset sources. in HTML pages, Vite automatically calulates from this 
+  set base URL. When adding your own links in HTML, use `%BASE_URL%` for relative links. In TypeScript sections,
+  such as in the web components, use `import.meta.env.BASE_URL` to get the base url (this will only work during the Vite
+  build step, as it get a Vite environment variable.)
+- The rest of the configuration can be found in `tsconfig.json` (for TypeScript configuration) and `vite.config.ts` (for Vite build configuration).
+
+
 ## Adding Content
 ### Add a Fanzine/Publication
 - Name the file following this template: YYYY-MM_title_First-Last.pdf, where 'First' and 'Last' are the first and last names of the editor of the fanzine.
@@ -47,4 +58,6 @@ This script runs firsts, generating the `gallery` page, and the `publications` p
 - If the page requires dynamic processing, like the `gallery` page, add a new step to `src/build.ts` to generate HTML in an automated fashion.
 
 ## Deployment
-
+- Run `npm run build` and deploy the `dist/` folder.
+- The website currently deploys to GitHub Pages through a CI/CD pipeline, 
+where the website is built using `npm run build`, the `dist/` folder is uploaded as an artifact, and then deployed to Pages.
