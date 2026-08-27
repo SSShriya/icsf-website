@@ -14,7 +14,7 @@ class SiteHeader extends HTMLElement {
     const base = import.meta.env.BASE_URL;
     this.innerHTML = `
             <h1>
-                <a id="logo" href="/">
+                <a id="logo" href="${base}">
                     <img src="${base}logo.png" alt="ICSF Logo" width="93" height="60" />
                 </a>
                 ICSF
