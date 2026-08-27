@@ -1,8 +1,8 @@
+import {BASE_URL} from '@/config.js';
 import * as fs from 'fs';
 
-const base = import.meta.env.BASE_URL;
 const FANZINES_DIR = './public/publications';
-const URL_PATH = `${base}publications`
+const URL_PATH = `${BASE_URL}publications`
 const TEMPLATE_FILE = './src/publications/publications-template.html';
 const OUTPUT_FILE = './src/publications/index.html';
 
