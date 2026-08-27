@@ -1,7 +1,8 @@
 import {glob} from 'glob';
 import {defineConfig} from 'vite';
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/icsf-website/' : '/',
   root: './src',
   publicDir: '../public',
   build: {
@@ -12,4 +13,4 @@ export default defineConfig({
       input: glob.sync('**/*.html', {cwd: './src'}),
     },
   },
-});
+}));
