@@ -46,7 +46,8 @@ This script runs firsts, generating the `gallery` page, and the `publications` p
 
 ## Adding Content
 ### Add a Fanzine/Publication
-- Name the file following this template: YYYY-MM_title_First-Last.pdf, where 'First' and 'Last' are the first and last names of the editor of the fanzine.
+- Name the file following this template: YYYY-MM_title_First-Last.pdf, where 'First' and 'Last' are the first and last names of the editor of the fanzine,
+  anad 'title' is either the title of the fanzine, or 'Wyrm' if it is a Wyrmtongue issue.
 - Drop it into the folder `public/publications/` and rebuild the website.
 
 ### Add New Album in Gallery

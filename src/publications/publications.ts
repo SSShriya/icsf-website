@@ -9,6 +9,7 @@ const OUTPUT_FILE = './src/publications/index.html';
 /* Given already formatted: date of fanzine, link to fanzine, title, and editor,
    generate html for the publication */
 function buildPubHTML(date: string, href: string, title: string, editor: string): string {
+  // TODO: add 2026 wyrmtongues!!
   return `<tr>
             <td>${date}</td>
             <td><a href="${href}" target="_blank">${title}</a></td>
@@ -28,7 +29,7 @@ function buildAllPubsHTML(fanzines: string[]): string {
         // parse the title by removing dashes
         // and replacing all 'Wyrms' with a full title including date
         let parsedTitle = title.replace(/-/g, ' ');
-        if (parsedTitle == 'Wyrm') {
+        if (parsedTitle.toLocaleLowerCase() == 'wyrm') {
           parsedTitle = `Wyrmtongue: ${parsedDate}`
         }
 
