@@ -1,5 +1,6 @@
-import {prettifyName, URL_PATH} from '../utils.js';
+import {prettifyName} from '../utils.js';
 
+const URL_PATH = `${import.meta.env.BASE_URL}gallery`;
 // get the album name from the url parameters
 const params = new URLSearchParams(window.location.search);
 const albumName = params.get('name');

@@ -1,17 +1,11 @@
 import {glob} from 'glob';
 import {defineConfig} from 'vite';
-import {BASE_URL} from './config.js';
 import path from 'path';
 
 export default defineConfig(({ command }) => ({
-  base: command === 'build' ? BASE_URL : '/',
+  base: command === 'build' ? '/icsf-website/' : '/',
   root: './src',
   publicDir: '../public',
-  resolve: {
-    alias: {
-      '@': path.resolve(import.meta.dirname, '.')
-    }
-  },
   build: {
     outDir: '../dist',
     emptyOutDir: true,

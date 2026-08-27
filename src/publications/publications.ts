@@ -1,8 +1,8 @@
-import {BASE_URL} from '@/config.js';
 import * as fs from 'fs';
 
 const FANZINES_DIR = './public/publications';
-const URL_PATH = `${BASE_URL}publications`
+// this BASE_URL will get replaced with the actual BASE_URL by Vite in the second build step
+const URL_PATH = `%BASE_URL%publications`
 const TEMPLATE_FILE = './src/publications/publications-template.html';
 const OUTPUT_FILE = './src/publications/index.html';
 

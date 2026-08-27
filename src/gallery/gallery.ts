@@ -1,7 +1,11 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import {prettifyName, URL_PATH} from './utils.js';
+import {prettifyName} from './utils.js';
+
+// this BASE_URL will then get replaced in the generated html by the actual base url by Vite in the
+// second build step
+const URL_PATH = `%BASE_URL%gallery`;
 
 const GALLERY_DIR = './public/gallery';
 const TEMPLATE_FILE = './src/gallery/gallery-template.html';
