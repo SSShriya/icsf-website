@@ -1,4 +1,5 @@
-export const URL_PATH = '/gallery';
+const base = import.meta.env.BASE_URL;
+export const URL_PATH = `${base}gallery`;
 
 export function prettifyName(filename: string): string {
   const withoutExt = filename.replace(/\.[^.]+$/, '');
