@@ -30,6 +30,7 @@ class SiteNav extends HTMLElement {
   }
 
   private link(href: string, label: string, currentPath: string): string {
+    // add the BASE_URL from vite to every link
     const base = import.meta.env.BASE_URL;
     return `<a href="${base}${href}" ${currentPath === href ? 'class="active"' : ''}>${label}</a>`;
   }
