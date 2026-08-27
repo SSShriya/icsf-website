@@ -10,6 +10,7 @@ const OUTPUT_FILE = './src/publications/index.html';
    generate html for the publication */
 function buildPubHTML(date: string, href: string, title: string, editor: string): string {
   // TODO: add 2026 wyrmtongues!!
+  // TODO: find the old wyrmtongues???
   return `<tr>
             <td>${date}</td>
             <td><a href="${href}" target="_blank">${title}</a></td>
