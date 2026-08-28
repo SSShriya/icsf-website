@@ -19,7 +19,7 @@ function parseEvents(): Event[] {
   return JSON.parse(fs.readFileSync(EVENTS_FILE, 'utf-8')) as Event[];
 }
 
-/* */
+/* Calculate the vertical offset for an event based on its date */
 function calculateOffset(date: string): number {
   // if date is just a year, default to January
   const normalised = /^\d{4}$/.test(date.trim()) ? `Jan ${date}` : date;

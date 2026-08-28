@@ -29,6 +29,7 @@ The website is built by running `npm run build`
 This script runs firsts, generating the `gallery` page, and the `publications` page, as these HTML pages are easier to automate than to write by hand.
 - Gallery (`src/gallery/gallery.ts`): scans `public/gallery/` for album folders, uses the first image in each album as a thumbnail, and writes `src/gallery/index.html` to display the page. It also generates a `photos.json` inside each album folder, listing all of the photos in an album, which the album page fetches at runtime.
 - Publications (`src/publications/publications.ts`): scans `public/publications/` for PDFs, parses the filename to extract the date, title and editor, and writes `src/publications/index.html` to display the page.
+- History (`src/history/history.ts`): looks at `src/history/events.json`, generates HTML for each event, and writes `src/history/index.html`. 
 
 ### Step 2: Vite
 - Vite then compiles everything in `src/` into `dist/`. This is where the completely built website lives.
@@ -52,6 +53,18 @@ This script runs firsts, generating the `gallery` page, and the `publications` p
 
 ### Add New Album in Gallery
 - Simply drop a folder into `public/gallery/` and rebuild the website.
+
+### Add a New Timeline Event in History 
+- Add a new row to the file `src/history/events.json`. Include the date of the event, the title of the event, and an optional link to the event.
+
+### Add a Picocon Page in The History Book
+- Take the HTML from the Picocon page, and copy it into `src/history/picocon/picocon(num).html`. Put any assets in a folder `src/history/picocon(num)/` and change the HTML to deal with links properly.
+- Copy the styles from the previous Picocon pages:
+  - Add a link to `/styles/history.css` in the \<head> section
+  - Put the page content into a \<div id="blue-book">
+  - Add a 'previous' link to the previous Picocon page 
+  - Update the 'next' links in the previous Picocon page 
+- Update `src/history/picocon/index.html` to include the link to this Picocon page.
 
 ### Add a New Page
 - Create a folder in `src/` with the page title, and add an `index.html`.
