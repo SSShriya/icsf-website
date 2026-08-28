@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>WhatsApp Channel - ICSF</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script type="module" src="/components/site-header.ts"></script>
+    <script type="module" src="/components/site-nav.ts"></script>
+    <script type="module" src="/components/site-footer.ts"></script>
+</head>
+<body>
+    <site-header subtitle="WhatsApp Channel"></site-header>
+    <site-nav></site-nav>
+
+    <main>
+        <p>Please complete the CAPTCHA to get the WhatsApp link.</p>
+
+        <div class="cf-turnstile" 
+             data-sitekey="0x4AAAAAAEfhPGq7Mae2tV9L"
+             data-callback="onSuccess">
+        </div>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script>
+        function onSuccess() {
+            // obfuscate the WhatsApp link to prevent scraping
+            const order = [3, 2, 5, 1, 4];
+            const parts = ['m/KrD2tm6C', 't.whats', 'https://cha', 'k1yAQh2cmFU15C', 'app.co'];
+            window.location.href = parts[0] + parts[1] + parts[2] + parts[3] + parts[4];
+        }
+    </script>
+</body>
+</html>
