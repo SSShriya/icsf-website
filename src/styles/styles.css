@@ -66,25 +66,33 @@ body.no-nav
 
 @media screen and (max-width: 45em) {
     body {
-        padding: 0 1em 0.5em 1em;  
+        padding: 0 1em 0.5em 1em;
         min-width: unset;
     }
 
-    nav {
+    site-nav nav {
         float: none;
         margin-left: 0;
         width: 100%;
         height: auto;
         border-right: none;
         border-bottom: 2px solid rgba(0,0,128,0.5);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    nav > a {
+    site-nav nav > a {
         display: inline-block;
         text-align: center;
         padding: 8px;
         margin: 4px;
         font-size: 12pt;
+        float: none;
+    }
+
+    site-nav nav > hr {
+        display: none;
     }
 }
 
