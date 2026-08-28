@@ -16,6 +16,7 @@ table.timeline
 
 	background: white;
 	background-clip: padding-box;
+	border-style: solid;
 	border-width: 18px 32px 17px 58px;
 	border-image: url('/book-red.png') 36 64 17 115 stretch;
 	-moz-border-image: url('/book-red.png') 36 64 17 115 stretch;
@@ -102,4 +103,13 @@ td.container>div
 .history-next::after
 {
 	content: ' ->';
+}
+
+/* float helper for wrapped images */
+.float-right {
+	float: right;
+	margin: 0 0 1em 1em;
+	max-width: 250px;
+	height: auto;
+	border: 1px solid #000;
 }

@@ -5,6 +5,7 @@ node_modules/
 dist/
 src/gallery/index.html
 src/publications/index.html
+src/history/index.html
 photos.json
 
 # Environment variables
