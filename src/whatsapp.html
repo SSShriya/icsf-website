@@ -30,7 +30,7 @@
             // obfuscate the WhatsApp link to prevent scraping
             const order = [3, 2, 5, 1, 4];
             const parts = ['m/KrD2tm6C', 't.whats', 'https://cha', 'k1yAQh2cmFU15C', 'app.co'];
-            window.location.href = parts[0] + parts[1] + parts[2] + parts[3] + parts[4];
+            window.location.href = parts[order[0]] + parts[order[1]] + parts[order[2]] + parts[order[3]] + parts[order[4]];
         }
     </script>
 </body>
