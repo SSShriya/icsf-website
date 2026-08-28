@@ -21,12 +21,11 @@ function parseEvents(): Event[] {
 
 /* Calculate the vertical offset for an event based on its date */
 function calculateOffset(date: string): number {
-  // if date is just a year, default to January
-  const normalised = /^\d{4}$/.test(date.trim()) ? `Jan ${date}` : date;
-  const parsed = new Date(`${normalised} 01`);  // parse date. set the day to 1st
-  const years = parsed.getFullYear() - START_YEAR;
-  const months = parsed.getMonth() + 1;
-  return years * ROW_HEIGHT_PX + months * (ROW_HEIGHT_PX / 12) + 2;
+  const [mm = '1', yyyy = START_YEAR.toString()] = date.trim().split('/');
+  const month = parseInt(mm);
+  const year = parseInt(yyyy);
+  const years = year - START_YEAR;
+  return years * ROW_HEIGHT_PX + month * (ROW_HEIGHT_PX / 12) + 2;
 }
 
 /* Generate HTML for a single event div */

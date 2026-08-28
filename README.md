@@ -38,10 +38,10 @@ This script runs firsts, generating the `gallery` page, and the `publications` p
 ### Deployment URL 
 - The base URL for the site is defined in vite.config.ts in the `base` parameter. It sets two different base URLs
   depending on whether the project was run with `npm run build` or `npm run dev`. It specifies the base from which
-  all relative URLs are calculated. For asset sources. in HTML pages, Vite automatically calulates from this 
-  set base URL. When adding your own links in HTML, use `%BASE_URL%` for relative links. In TypeScript sections,
+  all relative URLs are calculated. For asset sources in HTML pages (e.g. `<img src=...>`, Vite automatically calulates from this 
+  set base URL. When adding your own links in HTML (e.g. with `<a href..>`), use `%BASE_URL%` for relative links. In TypeScript sections,
   such as in the web components, use `import.meta.env.BASE_URL` to get the base url (this will only work during the Vite
-  build step, as it get a Vite environment variable.)
+  build step, as it gets a Vite environment variable.)
 - The rest of the configuration can be found in `tsconfig.json` (for TypeScript configuration) and `vite.config.ts` (for Vite build configuration).
 
 
@@ -55,7 +55,10 @@ This script runs firsts, generating the `gallery` page, and the `publications` p
 - Simply drop a folder into `public/gallery/` and rebuild the website.
 
 ### Add a New Timeline Event in History 
-- Add a new row to the file `src/history/events.json`. Include the date of the event, the title of the event, and an optional link to the event.
+- Add a new row to the file `src/history/events.json`, including:
+  - the date of the event (MM/YYYY - use MM = 01 if month is unknown)
+  - the title of the event
+  - an optional link to the event.
 
 ### Add a Picocon Page in The History Book
 - Take the HTML from the Picocon page, and copy it into `src/history/picocon/picocon(num).html`. Put any assets in a folder `src/history/picocon(num)/` and change the HTML to deal with links properly.
