@@ -21,16 +21,33 @@
              data-sitekey="0x4AAAAAAEfhPGq7Mae2tV9L"
              data-callback="onSuccess">
         </div>
+
+        <button id="joinBtn" hidden>Join WhatsApp Channel</button>
     </main>
 
     <site-footer></site-footer>
 
     <script>
+        function buildLink() {
+            const order = [3, 2, 0, 1, 4]
+            const encoded = [
+                'YXBwLmNvbS9',
+                'LckQydG02Q2sx', 
+                'jaGF0LndoYXRz', 
+                'aHR0cHM6Ly9', 
+                'eUFRaDJjbUZVMTVD'
+            ]
+            return atob(order.map(i => encoded[i]).join(''));
+        }
+
         function onSuccess() {
-            // obfuscate the WhatsApp link to prevent scraping
-            const order = [3, 2, 5, 1, 4];
-            const parts = ['m/KrD2tm6C', 't.whats', 'https://cha', 'k1yAQh2cmFU15C', 'app.co'];
-            window.location.href = parts[order[0]] + parts[order[1]] + parts[order[2]] + parts[order[3]] + parts[order[4]];
+            setTimeout(() => {
+                const btn = document.getElementById('joinBtn');
+                btn.hidden = false;
+                btn.onclick = () => {
+                    window.location.href = buildLink();
+                };
+            }, 1200);
         }
     </script>
 </body>
