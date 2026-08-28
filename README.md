@@ -1,5 +1,5 @@
 # ICSF Website
-A society information page for Imperial Sci-fi Fantasy Society.
+A society information page for Imperial Sci-fi Fantasy Society. This is an updated version of the website at https://github.com/ICSF/icsf-website, so you may find additional resources and code in this repo if needed.
 
 ## Prerequisites
 - Node.js 20.19 or higher ([download](https://nodejs.org))
