@@ -258,6 +258,14 @@ footer
 	margin: 0.2em 1em 0.5em 0.2em;
 }
 
+ul {
+	overflow: hidden;
+}
+
+.clear-fix {
+	clear: both;
+}
+
 .left  { float: left;  }
 .right { float: right; }
 .clear { clear: both;  }
