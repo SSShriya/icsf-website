@@ -7,33 +7,47 @@ class SiteNav extends HTMLElement {
   connectedCallback() {
     const path = window.location.pathname;
     const extraLinks = JSON.parse(this.getAttribute('extra-links') ?? '[]') as NavLink[];
+    const submenuParent = this.getAttribute('submenu-parent') ?? '';
 
-    // TODO: consider placement of extra nav links. currently have sandwiched them
-    // after the 'Home' link but we could also just put them before everything
+    const navItems = [
+      { href: '', label: 'Home' },
+      { href: 'events/', label: 'Events' },
+      { href: 'library/', label: 'Library' },
+      { href: 'committee/', label: 'Committee' },
+      { href: 'publications/', label: 'Publications' },
+      { href: 'picocon/', label: 'Picocon' },
+      { href: 'quotes/', label: 'Quotes' },
+      { href: 'gallery/', label: 'Gallery' },
+      { href: 'history/', label: 'History' },
+    ];
+
     this.innerHTML = `
-            <nav>
-                ${this.link('', 'Home', path)}
-                ${extraLinks.length > 0 ? '<hr />' : ''}
-                ${extraLinks.map(l => `<a href="${l.href}">${l.label}</a>`).join('')}
-                ${extraLinks.length > 0 ? '<hr />' : ''}
-                ${this.link('events/', 'Events', path)}
-                ${this.link('library/', 'Library', path)}
-                ${this.link('committee/', 'Committee', path)}
-                ${this.link('publications/', 'Publications', path)}
-                ${this.link('picocon/', 'Picocon', path)}
-                ${this.link('quotes/', 'Quotes', path)}
-                ${this.link('gallery/', 'Gallery', path)}
-                ${this.link('history/', 'History', path)}
-                
-            </nav>
-        `;
+      <nav>
+        ${navItems.map(item => `
+          ${this.link(item.href, item.label, path)}
+          ${item.href === submenuParent && extraLinks.length > 0
+            ? extraLinks.map(l => this.sublink(l.href, l.label, path)).join('')
+            : ''}
+        `).join('')}
+      </nav>
+    `;
   }
 
   private link(href: string, label: string, currentPath: string): string {
-    // add the BASE_URL from vite to every link
+    // Add the BASE_URL from Vite env to every url
     const base = import.meta.env.BASE_URL;
-    return `<a href="${base}${href}" ${currentPath === href ? 'class="active"' : ''}>${label}</a>`;
+    const fullHref = `${base}${href}`;
+    const isActive = currentPath === fullHref;
+    return `<a href="${fullHref}" ${isActive ? 'class="active"' : ''}>${label}</a>`;
   }
+
+  private sublink(href: string, label: string, currentPath: string): string {
+    const base = import.meta.env.BASE_URL;
+    const fullHref = `${base}${href}`;
+    const isActive = currentPath === fullHref;
+    return `<a href="${fullHref}" class="subnav${isActive ? ' active' : ''}">${label}</a>`;
+  }
+
 }
 
 customElements.define('site-nav', SiteNav);
