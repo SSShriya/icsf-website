@@ -15,7 +15,7 @@ class SiteHeader extends HTMLElement {
     this.innerHTML = `
             <h1>
                 <a id="logo" href="${base}">
-                    <img src="${base}logo.png" alt="ICSF Logo" width="93" height="60" />
+                    <img src="${base}logo.png" alt="ICSF Logo" width="100"/>
                 </a>
                 ICSF
                 <span id="subtitle">${subtitle}</span>
