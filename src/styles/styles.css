@@ -94,6 +94,14 @@ body.no-nav
     site-nav nav > hr {
         display: none;
     }
+
+	site-nav nav > a.subnav {
+        padding: 8px;
+        margin: 4px;
+        font-size: 11pt;
+        border-left: none;
+        background-color: rgba(0,0,128,0.15);
+    }
 }
 
 p
